@@ -1,0 +1,11 @@
+.list-cards{
+    display: flex;
+    gap: 5px;
+}
+
+.my-card{
+    border: 2px solid gray;
+    padding: 8px;
+    border-radius: 8px;
+    width: 30%;
+}

@@ -5,6 +5,8 @@ import ButtonFunction from "./components/ButtonFunction"
 import ComponenteA from "./ejercicios/ComponenteAB/ComponenteA";
 import Counter from "./ejercicios/UseState/Counter";
 import TestEffect from "./ejercicios/UseEffect/TestEffect";
+import User from "./fetching/User";
+import ListUsers from "./fetching/ListUsers";
 function App() {
 
   const imprimir = (textToPrint = '') => {
@@ -17,27 +19,14 @@ function App() {
 
   return (
     <>
-      <Title />
-      <ButtonPrint text="Imprimir" textToPrint="Imprime" />
-      <ButtonPrompt text="Prompt" textToPrint="Muestra Prompt" />
+      <h1>Ejercicio Fetching</h1>
 
-      <ButtonFunction
-        text="Button Function Imprimir"
-        functionToExecute={() => imprimir("Button Function Imprimir")}
-      />
+      <User/>
 
-      <ButtonFunction
-        text="Button Function Prompt"
-        functionToExecute={() => confirmPrompt("Button Function Prompt")}
-      />
+      <hr />
 
-      <ComponenteA textToShow={'HOLA'}/>
+      <ListUsers/>
 
-      <h1>Ejercicio Contador</h1>
-
-      <Counter/>
-
-      <TestEffect/>
     </>
   )
 }
