@@ -9,10 +9,10 @@ import User from "./fetching/User";
 import ListUsers from "./fetching/ListUsers";
 import useTest from "./hooks/useTest";
 import useGetAllProducts from "./hooks/useGetAllProducts";
+import CounterWithHook from "./components/CounterWithHook";
 function App() {
 
    const { products } = useGetAllProducts();
-
 
   const imprimir = (textToPrint = '') => {
     console.log(textToPrint);
@@ -24,13 +24,15 @@ function App() {
 
   return (
     <>
-      <h1>Ejercicio Fetching</h1>
+      {/* <h1>Ejercicio Fetching</h1>
 
       <User/>
 
       <hr />
 
-      <ListUsers/>
+      <ListUsers/> */}
+
+      <CounterWithHook/>
 
     </>
   )

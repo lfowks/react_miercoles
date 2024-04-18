@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react"
 import { getUserById } from "../services/Users/UserService"
+import User from "../fetching/User"
 
 const useGetUserById = (id: number) => {
 
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState<User>({
+        name: '',
+        id: 0,
+        phone :'',
+        username: ''
+    })
 
     useEffect(() => {
         (
@@ -12,7 +18,7 @@ const useGetUserById = (id: number) => {
                setUser(user);
            }
         )()
-     },[])
+     },[id])
   
     return { user };
 }
