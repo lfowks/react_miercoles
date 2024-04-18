@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import UserCard from "./UserCard";
+import useGetUserById from "../hooks/useGetUserById";
 
 type User = {
     id: number,
@@ -15,6 +16,8 @@ const User = () => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+
+  const {user} = useGetUserById(id);
   
   useEffect(() => {
     //FETCH
@@ -52,7 +55,7 @@ const User = () => {
       <div>
           <button onClick={handleClick}>Siguiente</button>
           <hr />
-          <UserCard user={myUser}/>
+          <UserCard user={user}/>
       </div>
     )
 }

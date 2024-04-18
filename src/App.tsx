@@ -7,7 +7,12 @@ import Counter from "./ejercicios/UseState/Counter";
 import TestEffect from "./ejercicios/UseEffect/TestEffect";
 import User from "./fetching/User";
 import ListUsers from "./fetching/ListUsers";
+import useTest from "./hooks/useTest";
+import useGetAllProducts from "./hooks/useGetAllProducts";
 function App() {
+
+   const { products } = useGetAllProducts();
+
 
   const imprimir = (textToPrint = '') => {
     console.log(textToPrint);

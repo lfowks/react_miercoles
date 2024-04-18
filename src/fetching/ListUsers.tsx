@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import UserCard from "./UserCard";
 import './ListUsers.css';
+import useGetAllUsers from "../hooks/useGetAllUsers";
 
 type User = {
     id: number,
@@ -14,6 +15,8 @@ const ListUsers = () => {
   const [myUsers, setMyUsers] = useState<User[]>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+
+  const { users } = useGetAllUsers();
   
   useEffect(() => {
     //FETCH
@@ -43,10 +46,10 @@ const ListUsers = () => {
     <div>Error</div>
   )
 
-  if(myUsers)
+  if(users)
     return (
       <div className="list-cards">
-        {myUsers.map((user)=>(
+        {users.map((user)=>(
             <div key={user.id} className="my-card">                
                 <UserCard user={user}/>
             </div>
